@@ -1,0 +1,421 @@
+paths:
+  /taxes/category:
+    get:
+      description: " get all categories"
+      tags:
+        - categoryDetails
+      parameters:
+          schema:
+            type: "object"
+            properties:
+              storeId:
+                type: "integer"
+              name:
+                type: "string"
+              description:
+                type: "string"
+              taxType:
+                type: "string"
+              taxFor:
+                type: "enum"
+              otherZoneRate:
+                type: "decimal"
+              isEnabled:
+                type: "string"
+              isDeleted:
+                type: "string"
+
+      responses:
+        "200":
+          description: "get all categories"
+          schema:
+            type: "object"
+            properties:
+              categoryDetails:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  storeId:
+                    type: "integer"
+                  name:
+                    type: "string"
+                  description:
+                    type: "string"
+                  taxType:
+                    type: "string"
+                  taxFor:
+                    type: "enum"
+                  otherZoneRate:
+                    type: "decimal"
+                  isEnabled:
+                    type: "string"
+                  isDeleted:
+                    type: "string"
+              code:
+                type: "string"
+              message:
+                type: "string"
+              success:
+                type: "boolean"
+        "422":
+          description: "failed to get category details"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+              statusCode:
+                type: "string"
+              details:
+                type: "string"
+
+  /taxes/update:
+    post:
+      description: "update an category"
+      tags:
+        - updateCategory
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            type: "object"
+            prperties:
+              storeId:
+                type: "integer"
+              name:
+                type: "string"
+              description:
+                type: "string"
+              taxType:
+                type: "string"
+              taxFor:
+                type: "enum"
+              otherZoneRate:
+                type: "decimal"
+              isEnabled:
+                type: "string"
+              isDeleted:
+                type: "string"
+      responses:
+        "200":
+          description: "update a category data"
+          schema:
+            type: "object"
+            properties:
+              updateDetails:
+                type: "object"
+                properties:
+                  storeId:
+                    type: "integer"
+                  name:
+                    type: "string"
+                  description:
+                    type: "string"
+                  taxType:
+                    type: "string"
+                  taxFor:
+                    type: "enum"
+                  otherZoneRate:
+                    type: "decimal"
+                  isEnabled:
+                    type: "string"
+                  isDeleted:
+                    type: "string"
+              code:
+                type: "string"
+              message:
+                type: "string"
+              success:
+                type: "boolean"
+        "422":
+          description: "failed to update an category"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+              statusCode:
+                type: "string"
+              details:
+                type: "string"
+              
+  /taxes/delete:
+    post:
+      description: "delete an category"
+      tags:
+        - deleteCategory
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            type: "object"
+            prperties:
+              storeId:
+                type: "integer"
+              name:
+                type: "string"
+              description:
+                type: "string"
+              taxType:
+                type: "string"
+              taxFor:
+                type: "enum"
+              otherZoneRate:
+                type: "decimal"
+              isEnabled:
+                type: "string"
+              isDeleted:
+                type: "string"
+      responses:
+        "200":
+          description: "delete a category data"
+          schema:
+            type: "object"
+            properties:
+              deleteDetails:
+                type: "object"
+                properties:
+                  storeId:
+                    type: "integer"
+                  name:
+                    type: "string"
+                  description:
+                    type: "string"
+                  taxType:
+                    type: "string"
+                  taxFor:
+                    type: "enum"
+                  otherZoneRate:
+                    type: "decimal"
+                  isEnabled:
+                    type: "string"
+                  isDeleted:
+                    type: "string"
+              code:
+                type: "string"
+              message:
+                type: "string"
+              success:
+                type: "boolean"
+        "422":
+          description: "failed to delete an category"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+              statusCode:
+                type: "string"
+              details:
+                type: "string"
+
+  /taxes/map:
+    post:
+      description: "create an taxZonesMapping function"
+      tags:
+        - mappingDetails
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            type: "object"
+            properties:
+              categoryName:
+                type: "string"
+              storeId:
+                type: "integer"
+              name:
+                type: "string"
+              description:
+                type: "string"
+              taxType:
+                type: "string"
+              taxFor:
+                type: "enum"
+              otherZoneRate:
+                type: "decimal"
+              isEnabled:
+                type: "string"
+              isDeleted:
+                type: "string"
+              zoneName:
+                type: "string"
+              zipCode: 
+                type: "string"
+              taxPercent:
+                type: "decimal"
+              deleted:
+                type: "string"
+              store:
+                type: "integer"
+              taxCategoryId:
+                type: "integer"
+
+      responses:
+        "200":
+          description: "create an mapping function"
+          schema:
+            type: "object"
+            properties:
+              mappingDetails:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  zoneName:
+                    type: "string"
+                  zipCode: 
+                    type: "string"
+                  isForZoneMap:
+                    type: "string"
+                  taxPercent:
+                    type: "integer"
+                  isDeleted:
+                    type: "string"
+                  storeId:
+                    type: "integer"
+                  taxCategoryId:
+                    type: "integer"
+              code:
+                type: "string"
+              message:
+                type: "string"
+              success: 
+                type: "boolean"
+        "422":
+          description: "failed to create mapping table"
+          schema:
+              type: "object"
+              properties:
+                message:
+                  type: "string"
+                statuscode:
+                  type: "string"
+                details:
+                  type: "string"
+
+  
+  /taxes/property:
+    post:
+      description: "create an property"
+      tags:
+        - createProperty
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            type: "object"
+            prperties:
+              id:
+                type: "integer"
+              name:
+                type: "string"
+              code:
+                type: "string"
+      responses:
+        "200":
+          description: "create an property table"
+          schema:
+            type: "object"
+            properties:
+              createDetails:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  name:
+                    type: "string"
+                  code:
+                    type: "string"
+              code:
+                type: "string"
+              message:
+                type: "string"
+              success:
+                type: "boolean"
+        "422":
+          description: "failed to create an property"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+              statusCode:
+                type: "string"
+              details:
+                type: "string"
+
+  /taxes/categories:
+    post:
+      description: "create an category"
+      tags:
+        - createCategory
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            type: "object"
+            prperties:
+              id:
+                type: "integer"
+              storeId:
+                type: "integer"
+              name:
+                type: "string"
+              description:
+                type: "string"
+              taxType:
+                type: "string"
+              taxFor:
+                type: "enum"
+              otherZoneRate:
+                type: "decimal"
+              isEnabled:
+                type: "string"
+              isDeleted:
+                type: "string"
+      responses:
+        "200":
+          description: "create an category table"
+          schema:
+            type: "object"
+            properties:
+              createDetails:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  storeId:
+                    type: "integer"
+                  name:
+                    type: "string"
+                  description:
+                    type: "string"
+                  taxType:
+                    type: "string"
+                  taxFor:
+                    type: "enum"
+                  otherZoneRate:
+                    type: "decimal"
+                  isEnabled:
+                    type: "string"
+                  isDeleted:
+                    type: "string"
+              code:
+                type: "string"
+              message:
+                type: "string"
+              success:
+                type: "boolean"
+        "422":
+          description: "failed to create an category"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+              statusCode:
+                type: "string"
+              details:
+                type: "string"             

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signupPage</title>
+  <style>
+    .android-large-2-jTb {
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 9.2rem 2.1rem 34.5rem 1.9rem;
+  position: relative;
+  width: 100%;
+
+  .frame-30-umP {
+    background-color: rgba(190, 190, 190, 0.9399999976);
+    border-radius: 2rem;
+    flex-shrink: 0;
+    height: 12.4rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .image-1-bGq {
+      height: 35.3rem;
+      object-fit: cover;
+      vertical-align: top;
+      width: 48.7rem;
+    }
+  }
+  .button-primary-sVF {
+    align-items: center;
+    background-color: #e1caff;
+    border: solid 0.1rem #000000;
+    border-radius: 2rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    color: rgba(65, 54, 54, 0.6899999976);
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5.2rem;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    margin: 0rem 8.3rem 4.9rem 7.8rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: calc(100% - 16.1rem);
+  }
+  .already-have-an-account--7Y1 {
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4900000095);
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    margin: 0rem 0rem 4.3rem 0.2rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .button-primary-awP {
+    align-items: center;
+    background-color: #e1caff;
+    border-radius: 2rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    color: rgba(65, 54, 54, 0.6899999976);
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5.2rem;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    margin: 0rem 7.9rem 0rem 8.2rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: calc(100% - 16.1rem);
+  }
+  .button-primary-awP:hover {
+      background-color: #797272;
+    }
+    .button-primary-sVF:hover {
+      background-color: #797272;
+    }
+}
+  </style>
+  <script>
+        function signin(){
+      fetch('/signin',{
+        method:'GET'
+      })
+      .then(()=>{
+        window.location.href='/signin';
+      })
+      .catch((error)=>{
+        console.error('error',error);
+      })
+    }
+    function signup1(){
+      fetch('/signup1',{
+        method:'GET'
+      })
+      .then(()=>{
+        window.location.href='/signup1';
+      })
+      .catch((error)=>{
+        console.error('error',error);
+      })
+    }
+  </script>
+</head>
+<body>
+  <div class="android-large-2-jTb" id="1159:340">
+    <div class="frame-30-umP" id="1159:341">
+    <img class="image-1-bGq" src="https://media.istockphoto.com/id/1358067776/photo/beauty-model-with-perfect-makeup.webp?b=1&s=170667a&w=0&k=20&c=p4gaEtB8Z6MHoW4ETvSsfAEobVyKU1A00kF4AOVC8UE="/>
+    </div>
+    <button class="button-primary-sVF" id="1159:345" onclick="signup1()">sign up</button>
+    <div class="already-have-an-account--7Y1" id="1160:348">already have an account ?</div>
+    <button class="button-primary-awP" id="1160:349" onclick="signin()">sign in</button>
+    </div>
+</body>
+</html>

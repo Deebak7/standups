@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .android-large-12-WUj {
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 26.8rem 9.6rem 25.4rem 10.5rem;
+  position: relative;
+  width: 100%;
+
+  .ellipse-25-6xj {
+    background-image: url('https://media.istockphoto.com/id/1432403413/photo/the-uppercase-black-letter-s-was-sprayed-on-the-cement-wall.webp?b=1&s=170667a&w=0&k=20&c=jvg_DDlRV6NtgKMMhNA-49Ma6gRtWv28XTdurJUAxBs=');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 7.5rem;
+    flex-shrink: 0;
+    height: 15rem;
+    margin: 0rem 0.9rem 7.6rem 0rem;
+    width: 15rem;
+  }
+  .button-primary-9pX {
+    align-items: center;
+    background-color: #e1caff;
+    border-radius: 2rem;
+    color: #413636;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5.2rem;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+.button-primary-9pX:hover {
+      background-color: #797272;
+    }
+  </style>
+  <script>
+         function home(){
+      fetch('/home',{
+        method:'GET'
+      })
+      .then(()=>{
+        window.location.href='/home';
+      })
+      .catch((error)=>{
+        console.error('error',error);
+      })
+    }
+  
+  </script>
+</head>
+<body>
+  <div class="android-large-12-WUj" id="1284:311">
+    <div class="ellipse-25-6xj" id="1284:313"></div>
+    <button class="button-primary-9pX" id="1285:318" onclick="home()">back</button>
+    </div>
+</body>
+</html>

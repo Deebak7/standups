@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  .frame-31-buM {
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 14.1rem 10rem 26.8rem 10.1rem;
+  position: relative;
+  width: 100%;
+
+  .ellipse-24-Nod {
+    background-image: url('/api/try-prod-ap-southeast-1-first-cluster/projects/3BRwNew432VNmXB18RCHUD/files/image/bd1d90fe7903760a6d118d55be9be379f10c6add');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 5rem;
+    flex-shrink: 0;
+    height: 10rem;
+    margin: 0rem 3rem 8.7rem 2.9rem;
+    width: calc(100% - 5.9rem);
+  }
+  .email-9bR {
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4900000095);
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    margin: 0rem 0.2rem 6.1rem 0rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .password-Q1Z {
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4900000095);
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    margin: 0rem 0.2rem 5.5rem 0rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .button-primary-VYo {
+    align-items: center;
+    background-color: #e1caff;
+    border-radius: 2rem;
+    color: rgba(65, 54, 54, 0.6899999976);
+    display: flex;
+    flex-shrink: 0;
+    font-family: Anton, 'Source Sans Pro';
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 5.2rem;
+    justify-content: center;
+    letter-spacing: -0.001rem;
+    line-height: 1.2;
+    text-transform: uppercase;  
+    white-space: nowrap;
+    width: 100%;
+  }
+  .button-primary-VYo:hover {
+      background-color: #797272;
+    }
+}
+</style>
+<script>
+      function homeicon(){
+        const email=document.getElementById('1239:304').value;
+        const password=document.getElementById('1239:305').value;
+        const data={
+          email:email,
+          password:password
+        };
+        fetch('http://localhost:3000/listener/exist',{
+          method:'POST',
+          headers:{
+            'Content-Type':'application/json'
+          },
+          body:JSON.stringify(data)
+        })
+        .then(response => {
+        if (response.ok) {
+          window.location.href = '/homeicon';
+        } else {
+          throw new Error('Invalid email or password');
+        }
+      })
+      .catch(error => {
+
+        // displayFlashMessage(error.message);
+        
+        console.error('Error:', error);
+      });
+    }
+
+    // function displayFlashMessage(message) {
+    //   const flashMessage = document.getElementById('flash-message');
+    //   flashMessage.textContent = message;
+    // }
+
+</script>
+</head>
+<body>
+  <div class="frame-31-buM" id="1239:300">
+    <div class="ellipse-24-Nod" id="1239:301"></div>
+    <label for="1239:304" class="email-9bR">email
+    <input type="email" id="1239:304" name="email"></label>
+    <label for="1239:305" class="password-Q1Z" >password
+    <input type="password"  id="1239:305" name="password"></label>
+    <button class="button-primary-VYo" id="1239:306" onclick="homeicon()">sign in</button>
+    </div>
+
+    <!-- <div id="flash-message"></div> -->
+</body>
+</html>
