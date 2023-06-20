@@ -138,7 +138,15 @@ const createMap=async function(req,res){
 module.exports.createMap=createMap;
 
 
+const calculateShippingValue=async function(req,res){
+  let [err,data]=await to(taxService.calculateShippingValue(req && req.body ? req.body : null))
+  if(err) return ReE(res,err,422);
+  if(data) return ReS(res,data,200);
+}
+module.exports.calculateShippingValue=calculateShippingValue;
 
+
+router.get('/shipping',calculateShippingValue);
 router.post('/property',taxValidator.mappingValidator.createProperty,validation.validate,createProperty);
 router.post('/categories',taxValidator.mappingValidator.createCategory,validation.validate,createCategory);
 router.get('/category',getAllCategory);

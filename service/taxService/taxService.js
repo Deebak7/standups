@@ -2,6 +2,7 @@ const { TE, to } = require('../../global_function');
 const Property=require('../../models').property;
 const Category=require('../../models').taxCategories;
 const Mapping=require('../../models').taxZonesMapping;
+const Delivery=require('../../models').delivery;
 
 
 
@@ -170,4 +171,54 @@ const createMap=async function(details){
   if(data1) return data1;
 }
   module.exports.createMap=createMap;
+
+
+//   const calculateShippingValue=async function(body){
+//     let totalTaxAmount=0;
+//     let totalAmount;
+//     let [err,data]=await to(Delivery.findOne({
+//         where:{
+//             id:body.id
+//         },
+//         include:{
+//             model:ShippingConfig
+//         }
+//     }))
+
+//     if(err) return TE(err.message);
+//     if(data && data.shippingType=='subtotal' && body.subAmount > data.minimumSubtotal)
+//         totalTaxAmount= body.subAmount;
+
+//     if(data && data.shippingType=='subtotal+tax' && body.subAmount+body.taxAmount > data.minimumSubtotal)
+//         totalTaxAmount=body.subAmount+body.taxAmount;
+//     console.log('totaltax',totalTaxAmount);
+
+//     if (data && data.shippingConfigs ) {
+//         const shippingConfigData = data.shippingConfigs;
+//         const matchingConfig = shippingConfigData.find((config) => {
+//             console.log('config value', config);
+//             return totalTaxAmount >= config.from && totalTaxAmount <= config.to
+//         });
+//         console.log('match',matchingConfig);
+//     if (matchingConfig) {
+//           totalAmount = matchingConfig.amount;
+//           console.log('total',totalAmount);
+    
+//     if(data && data.amountType =='amount'){
+//         console.log(totalAmount);
+//         (data.dataValues['amountRequired']=totalAmount);
+//         return {amountRequired: totalAmount};
+        
+//     }else{
+//         console.log(totalAmount/100);
+//         data.dataValues['amountRequired']=totalTaxAmount/100;
+//         return {amountRequired: totalTaxAmount/100 };
+//     }
+
+// }   
+
+// }    
+
+// }
+// module.exports.calculateShippingValue=calculateShippingValue;
 

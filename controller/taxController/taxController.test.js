@@ -2,6 +2,7 @@ const Categories=require('../../models').taxCategories;
 const taxController=require('../../controller/taxController/taxController');
 const Mapping=require('../../models').taxZonesMapping;
 const property=require('../../models').property;
+const Delivery=require('../../models').delivery;
 
 const mockRequest = () => {
   const req = {}
@@ -114,4 +115,33 @@ test('createCategory',async ()=>{
   await taxController.createCategory(req,res)
   expect(res.statusCode).toBe(200)
 })
+// test.only('shipping',async ()=>{
+//   let req=mockRequest()
+//   let res=mockResponse()
+//   req.body={"id" :2,
+//     "subAmount":1300,
+//     "taxAmount":200
+//   }
+//   Delivery.findOne=jest.fn()
+//   .mockRejectedValueOnce(new Error("Error"))
+//   .mockResolvedValue(Promise.resolve({}))
+//   .mockResolvedValue(Promise.resolve({}))
+//   .mockResolvedValue(Promise.resolve({
+//     shippingType:'subTotal',subAmount:100,minimumSubtotal:20 }))
+//   .mockResolvedValue(Promise.resolve({
+//     shippingConfigs:[
+//       {from:0 ,to:100,amount:10},
+//       {from:101 ,to:200,amount:20},
+//       { from: 201, to: 300, amount: 30 }
+//     ],
+//     amountType:'amount',dataValues:{}
+//   }))
+  
+//   await taxController.calculateShippingValue(req,res)
+//   expect(res.statusCode).toBe(422)
+//   await taxController.calculateShippingValue(req,res)
+//   expect(res.statusCode).toBe(200)
+
+  
+// })
 })
