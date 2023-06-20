@@ -10,7 +10,7 @@ const bcrypt=require('bcrypt');
 const createListener=async function(req,res){
   let err,data,listenerDetails={};
   const {email,password}=req.body;
-   [err,data]=await to(Listner.create({email,password}))
+  [err,data]=await to(Listner.create({email,password}))
   if(err) return ReE(res,err,422);
   if(data)  {
     [error,token]=await to(data.getJWT());
