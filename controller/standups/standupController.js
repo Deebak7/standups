@@ -12,6 +12,7 @@ const createListener=async function(req,res){
   const {email,password}=req.body;
   [err,data]=await to(Listner.create({email,password}))
   if(err) return ReE(res,err,422);
+  console.log('data',data);
   if(data)  {
     [error,token]=await to(data.getJWT());
     if(error) return ReE(res,error,422);
