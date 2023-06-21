@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.86% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/23</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/7</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.9% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/21</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -112,42 +112,42 @@
 <a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,22 +166,22 @@ const ReE = async function (res, err, code) { // Error Web Response
   return res.json({ success: false, error: err });
 }
 &nbsp;
-const ReS = <span class="fstat-no" title="function not covered" >fu</span>nction (res, data, code) { // Success Web Response
-  let send_data = <span class="cstat-no" title="statement not covered" >{ success: true };</span>
+const ReS = function (res, data, code) { // Success Web Response
+  let send_data = { success: true };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (typeof data == 'object') {</span>
-<span class="cstat-no" title="statement not covered" >    send_data = Object.assign(data, send_data);/</span>/merge the objects
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof data == 'object') {
+    send_data = Object.assign(data, send_data);//merge the objects
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (typeof code !== 'undefined') <span class="cstat-no" title="statement not covered" >res.statusCode = code;</span></span>
-<span class="cstat-no" title="statement not covered" >  return res.json(send_data);</span>
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof code !== 'undefined') res.statusCode = code;
+  return res.json(send_data);
 };
 &nbsp;
 const to = function (promise) {
   return promise
-    .then(<span class="fstat-no" title="function not covered" >da</span>ta =&gt; {
+    .then(data =&gt; {
       // console.log('data inside', data);
-<span class="cstat-no" title="statement not covered" >      return [null, data];</span>
+      return [null, data];
     }).catch(err =&gt; {
       // console.log('error', err);
       return [pe(err)]
@@ -189,11 +189,11 @@ const to = function (promise) {
     );
 }
 &nbsp;
-const TE = <span class="fstat-no" title="function not covered" >fu</span>nction (err_message, log) { // TE stands for Throw Error
-<span class="cstat-no" title="statement not covered" >  if (log === true) {</span>
+const TE = function (err_message, log) { // TE stands for Throw Error
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (log === true) {
     // console.error('err',err_message);
   }
-<span class="cstat-no" title="statement not covered" >  throw new Error(err_message);</span>
+  throw new Error(err_message);
 }
 &nbsp;
 // This is here to handle all the uncaught promise rejections
@@ -208,7 +208,7 @@ module.exports = { to, TE, ReE, ReS };</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-20T11:49:26.854Z
+                at 2023-06-21T04:23:27.273Z
             </div>
         <script src="../prettify.js"></script>
         <script>

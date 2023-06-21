@@ -6,8 +6,8 @@ var basename = path.basename(__filename);
 const db = {};
 require('../config/constant')
 require('../config/config')
-let environment;
-// let environment="test";
+// let environment;
+let environment="test";
 
 
 if (environment && environment.toLowerCase() == "test") {

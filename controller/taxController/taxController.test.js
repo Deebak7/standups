@@ -115,33 +115,47 @@ test('createCategory',async ()=>{
   await taxController.createCategory(req,res)
   expect(res.statusCode).toBe(200)
 })
-// test.only('shipping',async ()=>{
-//   let req=mockRequest()
-//   let res=mockResponse()
-//   req.body={"id" :2,
-//     "subAmount":1300,
-//     "taxAmount":200
-//   }
-//   Delivery.findOne=jest.fn()
-//   .mockRejectedValueOnce(new Error("Error"))
-//   .mockResolvedValue(Promise.resolve({}))
-//   .mockResolvedValue(Promise.resolve({}))
-//   .mockResolvedValue(Promise.resolve({
-//     shippingType:'subTotal',subAmount:100,minimumSubtotal:20 }))
-//   .mockResolvedValue(Promise.resolve({
-//     shippingConfigs:[
-//       {from:0 ,to:100,amount:10},
-//       {from:101 ,to:200,amount:20},
-//       { from: 201, to: 300, amount: 30 }
-//     ],
-//     amountType:'amount',dataValues:{}
-//   }))
-  
-//   await taxController.calculateShippingValue(req,res)
-//   expect(res.statusCode).toBe(422)
-//   await taxController.calculateShippingValue(req,res)
-//   expect(res.statusCode).toBe(200)
+test('shipping1',async ()=>{
+  let req=mockRequest()
+  let res=mockResponse()
+  req.body={id :2}
+  Delivery.findOne=jest.fn()
+  .mockRejectedValueOnce(new Error("Error"))
+  .mockResolvedValue(Promise.resolve({
+  shippingType:'subTotal',subAmount:100,minimumSubtotal:20 }))
+  await taxController.calculateShippingValue(req,res)
+  expect(res.statusCode).toBe(422)
+  // await taxController.calculateShippingValue(req,res)
+  // expect(res.statusCode).toBe(200)
+  })
+test('shipping2',async ()=>{
+  let req=mockRequest()
+  let res=mockResponse()
+  req.body={id:2}
+  Delivery.findOne=jest.fn()
+  .mockRejectedValueOnce(new Error("Error"))
+  .mockResolvedValueOnce({
+    shippingType:'subtotal + tax',subAmount:100,taxAmount:50,minimumSubtotal:90
+  })
+  await taxController.calculateShippingValue(req,res)
+  expect(res.statusCode).toBe(422)
+  await taxController.calculateShippingValue(req,res)
+  expect(res.statusCode).toBe(200)
+})
+test("createBoth", async () => {
+  req = mockRequest();
+  res = mockResponse();
+  req.body = {
+      "id":2,
+      "subAmount":1300,
+      "taxAmount":200
+  }
+  Delivery.findOne = jest.fn()
+    .mockRejectedValueOnce(new Error("Error"))
+    
+    await taxController.calculateShippingValue(req, res);
+    expect(res.statusCode).toBe(422);
+    
+  });
 
-  
-// })
 })
